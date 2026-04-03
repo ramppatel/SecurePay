@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:h2:mem:securepay-user-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  cloud:
+    compatibility-verifier:
+      enabled: false
+
+security:
+  jwt:
+    secret: ${SECUREPAY_JWT_SECRET:securepay-jwt-secret-key-change-before-production-12345}
+    expiration-ms: ${SECUREPAY_JWT_EXPIRATION_MS:86400000}
+
+services:
+  wallet:
+    enabled: ${SECUREPAY_WALLET_ENABLED:false}
+    base-url: ${SECUREPAY_WALLET_BASE_URL:http://localhost:8088}
+    default-currency: ${SECUREPAY_WALLET_DEFAULT_CURRENCY:INR}

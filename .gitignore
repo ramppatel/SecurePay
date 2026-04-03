@@ -1,1 +1,5 @@
 .DS_Store
+.idea/
+target/
+*/target/
+_reference_paypal_clone/
