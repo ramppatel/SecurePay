@@ -13,6 +13,7 @@
 
     <modules>
         <module>UserService</module>
+        <module>WalletService</module>
     </modules>
 
     <properties>
