@@ -12,6 +12,7 @@
     <description>SecurePay microservices workspace.</description>
 
     <modules>
+        <module>ApiGateway</module>
         <module>UserService</module>
         <module>WalletService</module>
         <module>TransactionService</module>
